@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root{
+  --white: #E9F1F7;
+  --light-gray: #E7DFC6;
+  --blue-lighter: #3c9cd4;
+  --blue: #2274A5;
+  --blue-darker: #14557a;
+  --black: #131B23;
+  --brownish: #816C61;
+  --red: #E3170A;
+  --yellow: #D1AC00;
+
+  --font-color: var(--black);
+  --primary-color: var(--white);
+  --secondary-color: var(--light-gray);
+  --tertiary-color: var(--brownish);
+  --danger-color: var(--red);
+  --warning-color: var(--yellow);
+  --good-hover: var(--blue-darker);
+  --good-color: var(--blue);
+  --good-active: var(--blue-darker)
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--font-color);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--primary-color);
+}
+
+.logo {
+  user-select: none;
+  letter-spacing: -5px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--font-color);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.2s;
+  user-select: none;
+}
+
+nav ul li a:hover {
+  color: var(--tertiary-color);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 200px;
+}
+
+.contact-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--primary-color);
+
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: var(--blue);
+  transition: 0.2s;
+}
+.contact-btn:hover {
+  background-color: var(--blue-darker);
+}
+.contact-btn:active {
+  background-color: var(--blue-lighter);
+}
+
+/* ERROR PAGE */
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+  width: 100%;
+}
+.error-page h1 {
+  font-size: 50px;
+}
+.error-back {
+  margin-top: 5px;
+  color: var(--primary-color);
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: var(--blue);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.error-back:hover {
+  background-color: var(--blue-darker);
+}
+
+.error-back:active {
+  background-color: var(--blue-lighter);
+}
+
+/*Typing Component*/
+.typing {
+  display: flex;
+  align-items: center;
+}
+.typing h1 {
+  font-size: 30px;
+}
+.cursor {
+  display: inline-block;
+  font-size: 30px;
+  width: 10px;
+  font-weight: bold;
+  animation: blink .8s infinite;
+}
+
+@keyframes blink {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+}
