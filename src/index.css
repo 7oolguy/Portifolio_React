@@ -8,9 +8,12 @@
   --blue-darker: #14557a;
   --black: #131B23;
   --brownish: #816C61;
+  --red-lighter: #f14539;
   --red: #E3170A;
+  --red-darker: #ad170d;
   --yellow: #D1AC00;
 
+  --shadow-dark: 0 0 50px 10px rgba(0, 0, 0, 0.2);
   --font-color: var(--black);
   --primary-color: var(--white);
   --secondary-color: var(--light-gray);
@@ -27,6 +30,7 @@
   padding: 0;
   box-sizing: border-box;
   color: var(--font-color);
+  user-select: none;
 }
 
 body {
@@ -66,7 +70,7 @@ nav ul li a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 5px 200px;
+  margin: 15px 200px;
 }
 
 .contact-btn {
@@ -74,7 +78,7 @@ nav ul li a:hover {
   justify-content: center;
   align-items: center;
 
-  font-size: 16px;
+  font-size: 26px;
   font-weight: bold;
   color: var(--primary-color);
 
@@ -86,9 +90,11 @@ nav ul li a:hover {
 }
 .contact-btn:hover {
   background-color: var(--blue-darker);
+  transform: scale(1.02);
 }
 .contact-btn:active {
   background-color: var(--blue-lighter);
+  transform: scale(0.99);
 }
 
 /* ERROR PAGE */
@@ -124,20 +130,181 @@ nav ul li a:hover {
 .typing {
   display: flex;
   align-items: center;
+  margin-top: 40vh;
+  justify-content: center;
+  width: 100%;
 }
 .typing h1 {
-  font-size: 30px;
+  font-size: 50px;
 }
 .cursor {
   display: inline-block;
-  font-size: 30px;
+  font-size: 60px;
   width: 10px;
   font-weight: bold;
-  animation: blink .8s infinite;
+  animation: blink .5s infinite;
 }
 
 @keyframes blink {
   0% {opacity: 1;}
   50% {opacity: 0;}
   100% {opacity: 1;}
+}
+
+/* Image Display */
+.image-display-container {
+  width: 350px; /* Set a fixed width */
+  height: 350px; /* Set a fixed height */
+  border-radius: 1000px; /* Ensure the container is circular */
+  overflow: hidden; /* Hide overflow to keep the circle shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+.image-display-container img {
+  width: 100%; /* Makes the image fill the container */
+  height: 400px; /* Makes the image fill the container */
+  object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+  /* object-position: 0% 50% ; */
+  display: block; /* Prevents any extra space below the image */
+}
+
+/* Card */
+.ab-me-card {
+  margin-top: 40vh;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-card {
+  display: flex;
+  align-items: center;
+}
+
+.card-content {
+  border-radius: 20px;
+  box-shadow: var(--shadow-dark);
+  padding: 2% 8%;
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: var(--black); */
+}
+
+.intro-text-group {
+  margin: 0 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.intro-text-group h1 {
+  font-size: 50px;
+}
+.intro-text-group h3 {
+  color: var(--tertiary-color);
+}
+
+.card-content p {
+  font-size: 20px;
+  text-align: center;
+  margin: 20px 100px;
+}
+
+.see-more {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--tertiary-color);
+  text-decoration: none;
+  transition: 0.2s;
+}
+.see-more:hover{
+  transform: scale(1.02);
+}
+
+/* Info Content Grid */
+.info-grid {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.content-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-rows: 300px 300px;
+  grid-template-columns: 485px 485px;
+  row-gap: 20px;
+  column-gap: 20px;
+  width: 980px;
+}
+
+.skills {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.skills h2 {
+  font-size: 40px;
+}
+.list-skill h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.list-skill ul {
+  list-style: inside;
+}
+
+.total-projects {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.total-projects h1 {
+  margin-top: 10px;
+}
+
+.time-experience {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card {
+  border-radius: 20px;
+  box-shadow: var(--shadow-dark);
+}
+
+.ctt-btn-ab-me {
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
